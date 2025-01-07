@@ -58,17 +58,18 @@ footer {
 
 #splash {
   display: flex;
+  justify-content: center;
+  align-items: center;
   border: var(--border);
   background-image: url("assets/images/splash.webp");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2em;
-  width: 100vw;
   min-height: 40em;
 }
 
 #splash > div {
-  padding: 2em;
+  padding: 4em 2em;
   text-align: center;
   display: flex;
   gap: 2em;
@@ -76,6 +77,8 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(0.1em);
+  box-shadow: 0em 0.25em 1em rgba(255, 253, 253, 0.658);
 }
 
 #splash > div > p {
@@ -106,7 +109,9 @@ footer {
 #about > img {
   grid-area: image;
   width: 100%;
+
   border-radius: 1em;
+  border: var(--border);
 }
 
 #testimonials {
@@ -148,4 +153,108 @@ footer {
 
 .testimonial > div > p:nth-child(2) {
   font-size: smaller;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#contact > h3 {
+  font-size: 2em;
+}
+
+#contact > form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  border-radius: 1em;
+  padding: 1em;
+  width: 80vw;
+}
+
+/* styles for large desktop */
+
+@media (min-width: 700px) {
+  #splash > div {
+    max-width: 30em;
+    padding: 6em 4em;
+    background-size: auto;
+  }
+
+  #splash > div > p {
+    font-size: 1.75em;
+  }
+
+  #splash > div > h2 {
+    font-size: 3.5em;
+  }
+
+  #about {
+    gap: 3em;
+    padding: 6em 3em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "paragraph image";
+    justify-content: center;
+    align-items: center;
+  }
+
+  .testimonials-container {
+    max-height: max-content;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: max-content;
+    gap: 1em;
+  }
+
+  .testimonial {
+    grid-column: span 2;
+    padding: 2em;
+    align-content: center;
+  }
+
+  .testimonial:nth-child(1) {
+    grid-column: 1/4;
+  }
+
+  .testimonial:nth-child(1) > p {
+    font-size: larger;
+  }
+
+  .testimonial:nth-child(2) {
+    grid-column: 4 / span 3;
+  }
+
+  .testimonial:nth-child(2) > p {
+    font-size: larger;
+  }
+
+  .testimonial > div {
+    place-self: end;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    margin: 0 8em;
+  }
+
+  #about > p {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 1536px) {
+  main {
+    margin: 0 20em;
+  }
+  #about > p {
+    font-size: 1.6em;
+  }
 }
