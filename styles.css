@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Rubik+Spray+Paint&display=swap");
+
+:root {
+  --primary-font: "Fredoka";
+  --secondary-font: "Rubik Spray Paint";
+  --border: 1px solid black;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: var(--primary-font);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+  border: var(--border);
+}
+
+nav > h2 {
+  font-size: 3em;
+  user-select: none;
+}
+
+nav > div > ul {
+  display: flex;
+  gap: 1em;
+  user-select: none;
+}
+
+nav > div > ul > li {
+  cursor: pointer;
+}
+
+main {
+  flex-grow: 1;
+}
+
+#about {
+  display: flex;
+  border: var(--border);
+  background-image: url("assets/images/splash.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2em;
+  width: 100vw;
+  min-height: 50em;
+}
+
+#about > div {
+  padding: 2em;
+  text-align: center;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.76);
+}
+
+#about > div > p {
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+#about > div > h2 {
+  font-size: 3em;
+}
