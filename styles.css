@@ -25,16 +25,41 @@ body {
 }
 
 nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 2em;
-  border: var(--border);
+  border: 3px solid black;
+  height: 5.5em;
+}
+
+.nav-links {
+  display: none;
+}
+
+.hamburger-btn {
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+}
+
+.hamburger-line {
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
 }
 
 nav > h2 {
   font-size: 3em;
   user-select: none;
+  text-shadow: #eaae17 0px 2px 0, #3fb98286 -0px -2px 0;
 }
 
 nav > div > ul {
@@ -60,7 +85,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: var(--border);
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
   background-image: url("assets/images/splash.webp");
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,9 +136,8 @@ footer {
 #about > img {
   grid-area: image;
   width: 100%;
-
   border-radius: 1em;
-  border: var(--border);
+  border: 3px solid black;
 }
 
 #testimonials {
@@ -149,6 +175,7 @@ footer {
 
 .testimonial > div {
   grid-column: 3 / span 2;
+  text-align: right;
 }
 
 .testimonial > div > p:nth-child(2) {
@@ -177,7 +204,35 @@ footer {
   width: 80vw;
 }
 
-/* styles for large desktop */
+/* Nav Menu */
+
+.nav-links-mobile {
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
+  height: 5.5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  transition: all ease;
+  animation: nav-links-in ease 1s;
+}
+
+@keyframes nav-links-in {
+  0% {
+    background: rgba(255, 255, 255, 0.021);
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+    background: white;
+  }
+}
+
+/* styles for desktop */
 
 @media (min-width: 700px) {
   #splash > div {
@@ -201,6 +256,14 @@ footer {
     grid-template-areas: "paragraph image";
     justify-content: center;
     align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .hamburger-btn {
+    display: none;
   }
 
   .testimonials-container {
@@ -240,7 +303,7 @@ footer {
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   main {
     margin: 0 8em;
   }
@@ -248,11 +311,11 @@ footer {
   #about > p {
     font-size: 1.3em;
   }
-}
+} */
 
-@media (min-width: 1536px) {
+@media (min-width: 1224px) {
   main {
-    margin: 0 20em;
+    margin: 0 15em;
   }
   #about > p {
     font-size: 1.6em;
