@@ -54,6 +54,7 @@ nav {
   width: 100%;
   background-color: black;
   border-radius: 2px;
+  z-index: 2000;
 }
 
 nav > h2 {
@@ -204,31 +205,80 @@ footer {
   width: 80vw;
 }
 
-/* Nav Menu */
+/* Nav Menu animations */
 
-.nav-links-mobile {
+.nav-links-mobile-in {
   position: absolute;
   display: flex;
   left: 0;
   top: 0;
-  height: 5.5em;
+  height: 5em;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
   transition: all ease;
-  animation: nav-links-in ease 1s;
+  animation: nav-links-in ease 750ms;
+}
+
+.nav-links-mobile-out {
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
+  height: 5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease;
+  animation: nav-links-out ease 750ms forwards;
+}
+
+.logo-out {
+  transition: all ease;
+  animation: logo-out ease 500ms forwards;
+}
+
+.logo-in {
+  transition: all ease;
+  animation: logo-in ease 500ms forwards;
+}
+
+@keyframes logo-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logo-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 @keyframes nav-links-in {
   0% {
-    background: rgba(255, 255, 255, 0.021);
     left: 100%;
   }
+
   100% {
     left: 0%;
-    background: white;
+  }
+}
+
+@keyframes nav-links-out {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
   }
 }
 
