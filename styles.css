@@ -41,6 +41,7 @@ nav {
 .hamburger-btn {
   width: 2.5em;
   height: 2.5em;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,11 +51,16 @@ nav {
 }
 
 .hamburger-line {
+  position: relative;
   height: 4px;
   width: 100%;
   background-color: black;
   border-radius: 2px;
   z-index: 2000;
+  transition: all 400ms;
+}
+
+.hamburger-line:nth-child(2) {
 }
 
 nav > h2 {
@@ -205,7 +211,7 @@ footer {
   width: 80vw;
 }
 
-/* Nav Menu animations */
+/* Nav Menu animations & classes */
 
 .nav-links-mobile-in {
   position: absolute;
@@ -280,6 +286,25 @@ footer {
   100% {
     left: 100%;
   }
+}
+
+.ham-1 {
+  position: absolute;
+  rotate: 45deg;
+  transform-origin: center;
+  scale: 90% 100%;
+}
+
+.ham-2 {
+  opacity: 0;
+  scale: 2%;
+}
+
+.ham-3 {
+  position: absolute;
+  rotate: -45deg;
+  transform-origin: center;
+  scale: 90% 100%;
 }
 
 /* styles for desktop */
