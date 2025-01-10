@@ -48,6 +48,7 @@ nav {
   gap: 5px;
   background: none;
   border: none;
+  overflow: hidden;
 }
 
 .hamburger-line {
